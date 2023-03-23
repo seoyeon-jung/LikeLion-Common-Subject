@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <title>Time Converter</title>
+  </head>
   <body>
     <div id="root"></div>
   </body>
@@ -54,8 +58,10 @@
           </div>
           <br />
           <div>
-            <button onClick={reset}>리셋</button>
-            <button onClick={invert}>
+            <button onClick={reset} id="resetBtn">
+              리셋
+            </button>
+            <button onClick={invert} id="invertBtn">
               {inverted ? "분 => 시" : "시 => 분"}
             </button>
           </div>
