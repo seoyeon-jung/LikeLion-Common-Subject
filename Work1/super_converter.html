@@ -11,6 +11,15 @@
   <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
+    const Button = (props) => {
+      const { label, id, onClick } = props;
+
+      return (
+        <button id={id} onClick={onClick}>
+          {label}
+        </button>
+      );
+    };
     const TimeConverter = () => {
       const [inverted, setInverted] = React.useState(false);
 
@@ -55,12 +64,12 @@
           </div>
           <br />
           <div>
-            <button onClick={reset} id="resetBtn">
-              리셋
-            </button>
-            <button onClick={invert} id="invertBtn">
-              {inverted ? "분 => 시" : "시 => 분"}
-            </button>
+            <Button label="리셋" id="resetBtn" onClick={reset} />
+            <Button
+              label={inverted ? "분 => 시" : "시 => 분"}
+              id="invertBtn"
+              onClick={invert}
+            />
           </div>
         </div>
       );
@@ -110,12 +119,12 @@
           </div>
           <br />
           <div>
-            <button onClick={reset} id="resetBtn">
-              리셋
-            </button>
-            <button onClick={invert} id="invertBtn">
-              {inverted ? "킬로미터 => 마일" : "마일 => 킬로미터"}
-            </button>
+            <Button label="리셋" id="resetBtn" onClick={reset} />
+            <Button
+              label={inverted ? "킬로미터 => 마일" : "마일 => 킬로미터"}
+              id="invertBtn"
+              onClick={invert}
+            />
           </div>
         </div>
       );
